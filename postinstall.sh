@@ -7,7 +7,7 @@ source /home/vagrant/.nvm/nvm.sh
 
 # using latest stable version of node
 # change this to whatever version of node you want to install packages for
-nvm use v0.*
+nvm use v4.*
 
 # NOTE: Customize the below packages to meet your personal needs
 # install common nodejs tools
@@ -19,3 +19,8 @@ npm install -g yo
 npm install -g testem
 npm install -g karma-cli
 npm install -g jasmine
+
+printf "Install and configure oh-my-zsh"
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+
+chsh -s /usr/bin/zsh

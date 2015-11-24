@@ -13,8 +13,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Vagrant box to build on
     config.vm.box = "ubuntu/trusty64"
 
+    config.vm.hostname = "synapse"
+
+    config.vm.provider :virtualbox do |vb|
+        vb.name = "node-env"
+    end
+
     # host to guest port forwarding
-    config.vm.network :forwarded_port, guest: 1337, host: 1337
+    config.vm.network "private_network", ip: "10.27.12.2"
+    config.vm.network :forwarded_port, guest: 8000, host: 8000
 
     # settings for VirtualBox provider
     config.vm.provider "virtualbox" do |v, override|

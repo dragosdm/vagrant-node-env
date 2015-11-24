@@ -21,11 +21,11 @@ apt-get update
 
 printf "Installing a few necessary packages..."
 # install required packages
-apt-get install -y git nodejs nodejs-legacy npm mongodb-org redis-server
+apt-get install -y git nodejs nodejs-legacy npm mongodb-org redis-server zsh
 
 # make sure npm is up to date (npm has trouble upgrading directly to 3.3.3 from 2.14.3, so we have to upgrade to 3.0.0 first)
 npm install -g npm@3.0.0
-npm install -g npm@3.3.3
+npm install -g npm@3.4.1
 
 # remove old hash for npm so bash will find the new version
 hash -d npm
@@ -55,7 +55,7 @@ nvm install iojs
 
 # make sure npm is up to date (npm has trouble upgrading directly to 3.3.3 from 2.14.3, so we have to upgrade to 3.0.0 first)
 npm install -g npm@3.0.0
-npm install -g npm@3.3.3
+npm install -g npm@3.4.1
 
 # remove old hash for npm so bash will find the new version
 hash -d npm
@@ -66,14 +66,14 @@ nvm alias default stable
 
 # make sure npm is up to date (npm has trouble upgrading directly to 3.3.3 from 2.14.3, so we have to upgrade to 3.0.0 first)
 npm install -g npm@3.0.0
-npm install -g npm@3.3.3
+npm install -g npm@3.4.1
 
 # remove old hash for npm so bash will find the new version
 hash -d npm
 
 # install stable version of node with nvm, and set it to the default version
-nvm install v0.*
-nvm alias default v0.*
+nvm install v4.*
+nvm alias default v4.*
 
 printf "Making sure ownership rights are correct in vagrant user directory..."
 # make sure everything in the vagrant directory is owned by vagrant
